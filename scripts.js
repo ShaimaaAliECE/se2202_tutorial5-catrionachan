@@ -3,10 +3,17 @@ let nextPlayer = 'X'; // takes a value of either 'X' or 'O' according to the gam
 //initialize the game
 
 // use the value stored in the nextPlayer variable to indicate who the next player is
-
+let p1 = 'Y';
+let p2 = 'X';
 
 //This call will create the buttons needed for the gameboard.
 createGameBoard()
+
+let button = 
+	`<label id='button-lbl'></label>
+	<button id='button'></button>`;
+
+
 
 function createGameBoard()
 {
@@ -27,9 +34,17 @@ function takeCell(event)
     /*
         When the button is clicked, the space inside its square brackets is replaced by the value in the nextPlayer before switching it
     */
+    let clickedBtn = event.target;
+    let lbl = clickedBtn.previousElementSibling;
+    clickedBtn.innerText = nextPlayer;
+    if (nextPlayer === 'X'){
+        nextPlayer = 'Y';
+    }else if (nextPlayer === 'Y'){
+        nextPlayer = 'X';
+    }
 
     // Make sure the button is clickable only once (I didn't mention how to do that, look it up :) )
-
+    
     // Check if the game is over
     if (isGameOver())
     {
