@@ -6,7 +6,8 @@ let nextPlayer = 'X'; // takes a value of either 'X' or 'O' according to the gam
 let p1 = 'Y';
 let p2 = 'X';
 let nextLabel = document.querySelectorAll('next-lbl');
-nextLabel.innerText = nextPlayer
+let html = '<p>' + nextPlayer +'</p>'
+nextLabel.innerHTML = html
 //This call will create the buttons needed for the gameboard.
 createGameBoard()
 
@@ -30,8 +31,8 @@ function takeCell(event)
     /*
         When the button is clicked, the space inside its square brackets is replaced by the value in the nextPlayer before switching it
     */
-    let renameNextLabel = document.querySelectorAll('next-lbl'); 
-    renameNextLabel.innerText = nextPlayer
+    //let renameNextLabel = document.querySelectorAll('next-lbl'); 
+    
     let clickedBtn = event.target;
     let lbl = clickedBtn.previousElementSibling;
     clickedBtn.innerText = nextPlayer;
