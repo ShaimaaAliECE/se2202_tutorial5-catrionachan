@@ -5,7 +5,8 @@ let nextPlayer = 'X'; // takes a value of either 'X' or 'O' according to the gam
 // use the value stored in the nextPlayer variable to indicate who the next player is
 let p1 = 'Y';
 let p2 = 'X';
-
+let nextLabel = document.querySelector('next-lbl');
+nextLabel.innerText = nextPlayer
 //This call will create the buttons needed for the gameboard.
 createGameBoard()
 
@@ -34,6 +35,7 @@ function takeCell(event)
     /*
         When the button is clicked, the space inside its square brackets is replaced by the value in the nextPlayer before switching it
     */
+    nextLabel.innerText = nextPlayer
     let clickedBtn = event.target;
     let lbl = clickedBtn.previousElementSibling;
     clickedBtn.innerText = nextPlayer;
