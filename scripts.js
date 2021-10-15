@@ -30,7 +30,8 @@ function takeCell(event)
     /*
         When the button is clicked, the space inside its square brackets is replaced by the value in the nextPlayer before switching it
     */
-    nextLabel.innerText = nextPlayer
+    let renameNextLabel = document.querySelectorAll('next-lbl'); 
+    renameNextLabel.innerText = nextPlayer
     let clickedBtn = event.target;
     let lbl = clickedBtn.previousElementSibling;
     clickedBtn.innerText = nextPlayer;
