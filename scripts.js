@@ -20,6 +20,7 @@ function createGameBoard()
     {
         btns[i].innerText = '[]';
     }
+    
 }
 
 // Programatically add 'takeCell' as an event listener to all the buttons on the board
